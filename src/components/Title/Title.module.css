@@ -1,0 +1,14 @@
+.titleWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 46px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(24, 66, 251);
+}
