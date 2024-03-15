@@ -1,12 +1,12 @@
 .contactCard {
-  width: calc((100%-45px) / 4);
+  width: 160px;
   border: 1px solid #1842fb;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 8px;
   transition: scale 250ms;
 }
@@ -14,4 +14,9 @@
 .contactCard:hover {
   background-color: #9adfff9f;
   transform: scale(1.03);
+}
+
+.span {
+  align-items: center;
+  margin-right: 6px;
 }

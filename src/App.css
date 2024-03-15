@@ -15,9 +15,3 @@
   padding-left: 30px;
   padding-top: 30px;
 }
-
-.panel {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
