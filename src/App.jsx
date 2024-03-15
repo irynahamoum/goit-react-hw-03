@@ -1,10 +1,9 @@
 import './App.css';
 import { useState } from 'react';
 import Title from './components/Title/Title';
-import ButtonTemplate from './components/Button/Button';
 import SearchBox from './components/SearchBox/SearchBox';
-import { SearchOutlined, UserAddOutlined } from '@ant-design/icons';
 import ContactList from './components/ContactList/ContactList';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -32,9 +31,8 @@ function App() {
   return (
     <div className="wrap">
       <Title />
-      <ButtonTemplate btnTitle={'Add contact'} icon={<UserAddOutlined />} />
+      <ContactForm />
       <SearchBox />
-      <ButtonTemplate btnTitle={'Search'} icon={<SearchOutlined />} />
       <ContactList contacts={contacts} updateContacts={updateContacts} />
     </div>
   );
