@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  padding-right: 30px;
 }
 
 .title {
@@ -10,5 +11,5 @@
   font-size: 46px;
   margin-top: 0;
   margin-bottom: 0;
-  color: rgb(24, 66, 251);
+  color: #1842fb;
 }

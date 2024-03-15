@@ -5,7 +5,19 @@
 }
 
 .wrap {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 600px;
+  align-items: center;
+  gap: 25px;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.panel {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
 }
