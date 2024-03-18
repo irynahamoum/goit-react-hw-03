@@ -1,5 +1,5 @@
-import './App.css';
 import { useState } from 'react';
+import './App.css';
 import Title from './components/Title/Title';
 import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
@@ -20,19 +20,21 @@ function App() {
     ];
     return contacts;
   });
+  const [inputValue, setInputValue] = useState('');
+  const handleChange = (evt) => {
+    setInputValue(evt.target.value);
+    console.log(inputValue);
+  };
 
   const updateContacts = () => {
-    setContacts((prevContacts) => [
-      ...prevContacts,
-      { id: 'new-id', name: 'New Contact', number: '123-45-67' }, // Adjust data accordingly
-    ]);
+    setContacts((prevContacts) => [...prevContacts, { id: 'new-id', name: 'New Contact', number: '123-45-67' }]);
   };
 
   return (
     <div className="wrap">
       <Title />
       <ContactForm />
-      <SearchBox />
+      <SearchBox handleChange={handleChange} />
       <ContactList contacts={contacts} updateContacts={updateContacts} />
     </div>
   );

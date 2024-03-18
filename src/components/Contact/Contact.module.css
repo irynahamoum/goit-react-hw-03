@@ -1,6 +1,7 @@
 .contactCard {
-  width: 160px;
-  border: 1px solid #1842fb;
+  width: 125px;
+  height: 175px;
+  border: 1px solid #4264fb;
   border-radius: 6px;
   display: flex;
   flex-direction: column;

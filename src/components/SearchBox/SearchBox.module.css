@@ -1,31 +1,23 @@
-.contactForm {
+.searchContainer {
   width: 90%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
   border: 1px solid #4264fb;
   border-radius: 6px;
   padding: 30px;
 }
 
-.input {
-  align-self: start;
-  width: 100%;
+.searchInput {
+  width: 300px;
   border: 1px solid #26b6f9;
   border-radius: 6px;
   height: 30px;
 }
 
-.input:hover,
-.input:focus,
-.input:active {
+.searchInput:hover,
+.searchInput:focus,
+.searchInput:active {
   border: 1px solid rgba(0, 107, 247, 0.808);
   background-color: #9adfff9f;
   outline: none;
-}
-
-.label {
-  align-self: start;
 }
