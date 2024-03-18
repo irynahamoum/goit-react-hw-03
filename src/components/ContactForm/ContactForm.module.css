@@ -1,4 +1,7 @@
 .contactForm {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-weight: 500;
+  font-style: normal;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -11,11 +14,15 @@
 }
 
 .input {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   align-self: start;
   width: 100%;
   border: 1px solid #26b6f9;
   border-radius: 6px;
   height: 30px;
+  color: #4264fb;
 }
 
 .input:hover,
@@ -28,4 +35,5 @@
 
 .label {
   align-self: start;
+  color: #1c45fc;
 }

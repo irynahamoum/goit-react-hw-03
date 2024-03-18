@@ -1,12 +1,21 @@
-import ButtonTemplate from '../Button/Button';
-import { SearchOutlined } from '@ant-design/icons';
 import css from './SearchBox.module.css';
+import { useId } from 'react';
 
-const SearchBox = ({ handleChange }) => {
+const SearchBox = ({ value, handleChange }) => {
+  const searchInput = useId();
   return (
     <div className={css.searchContainer}>
-      <input className={css.searchInput} type="text" onChange={handleChange} placeholder="Search..." />
-      <ButtonTemplate btnTitle={'Search'} icon={<SearchOutlined />} />
+      <label className={css.label} htmlFor={searchInput}>
+        Find contacts by name:
+      </label>
+      <input
+        id={searchInput}
+        className={css.searchInput}
+        type="text"
+        onChange={handleChange}
+        value={value}
+        placeholder="Search..."
+      />
     </div>
   );
 };

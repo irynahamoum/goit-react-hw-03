@@ -4,17 +4,25 @@ import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { useId } from 'react';
 
-const ContactForm = () => {
+const ContactForm = ({ addContact }) => {
   const nameId = useId();
   const telephoneId = useId();
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(5555);
-    // form.reset();
+    const form = event.target;
+    const { name, telephone } = form.elements;
+
+    addContact({
+      name: name.value,
+      telephone: telephone.value,
+    });
+
+    form.reset();
   };
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)} className={css.contactForm}>
+    <form onSubmit={handleSubmit} className={css.contactForm}>
       <label className={css.label} htmlFor={nameId}>
         Name:
       </label>
@@ -22,7 +30,7 @@ const ContactForm = () => {
       <label className={css.label} htmlFor={telephoneId}>
         Telephone Number:
       </label>
-      <input id={telephoneId} className={css.input} type="tel" name="telephone number" required />
+      <input id={telephoneId} className={css.input} type="tel" name="telephone" required />
       <ButtonTemplate btnTitle={'Add contact'} icon={<UserAddOutlined />} />
     </form>
   );

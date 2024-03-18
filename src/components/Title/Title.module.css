@@ -7,6 +7,9 @@
 }
 
 .title {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-weight: 600;
+  font-style: bold;
   font-weight: bold;
   font-style: normal;
   font-size: 46px;

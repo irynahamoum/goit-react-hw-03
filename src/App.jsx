@@ -25,6 +25,9 @@ function App() {
     setInputValue(evt.target.value);
     console.log(inputValue);
   };
+  const handleAddingContact = (userData) => {
+    console.log(userData);
+  };
 
   const updateContacts = () => {
     setContacts((prevContacts) => [...prevContacts, { id: 'new-id', name: 'New Contact', number: '123-45-67' }]);
@@ -33,7 +36,7 @@ function App() {
   return (
     <div className="wrap">
       <Title />
-      <ContactForm />
+      <ContactForm addContact={handleAddingContact} />
       <SearchBox handleChange={handleChange} />
       <ContactList contacts={contacts} updateContacts={updateContacts} />
     </div>

@@ -1,17 +1,34 @@
 .searchContainer {
   width: 90%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   border: 1px solid #4264fb;
   border-radius: 6px;
   padding: 30px;
 }
 
+.label {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #1c45fc;
+  margin-bottom: 15px;
+}
+
 .searchInput {
-  width: 300px;
   border: 1px solid #26b6f9;
   border-radius: 6px;
   height: 30px;
+  padding-left: 10px;
+  color: #4264fb;
+}
+
+::placeholder {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4264fb;
+  opacity: 1; /* For Firefox */
 }
 
 .searchInput:hover,
