@@ -14,6 +14,7 @@
   text-align: center;
   padding: 8px;
   transition: scale 250ms;
+  gap: 4px;
 }
 
 .contactCard:hover {
@@ -24,4 +25,15 @@
 .span {
   align-items: center;
   margin-right: 6px;
+}
+
+.p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.category {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  color: #5ec9fb;
 }

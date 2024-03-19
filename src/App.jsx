@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
+import initialContacts from './assets/InitialContacts.json';
 import Title from './components/Title/Title';
 import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
@@ -7,38 +8,34 @@ import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
-    const contacts = [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-      { id: 'id-5', name: 'John Smith', number: '459-12-58' },
-      { id: 'id-6', name: 'Steve Kline', number: '443-20-16' },
-      { id: 'id-7', name: 'Dave Bailey', number: '645-14-79' },
-      { id: 'id-8', name: 'Marta Darsey', number: '227-98-78' },
-      { id: 'id-9', name: 'Olya Iceland', number: '227-49-31' },
-    ];
-    return contacts;
+    const savedContacts = JSON.parse(window.localStorage.getItem('saved-contacts'));
+    return savedContacts !== null ? savedContacts : initialContacts;
   });
   const [inputValue, setInputValue] = useState('');
-  const handleChange = (evt) => {
-    setInputValue(evt.target.value);
-    console.log(inputValue);
+  const addContact = (newContact) => {
+    setContacts((previousContacts) => {
+      return [...previousContacts, newContact];
+    });
   };
-  const handleAddingContact = (userData) => {
-    console.log(userData);
-  };
-
+  useEffect(() => {
+    window.localStorage.setItem('saved-contacts', JSON.stringify(contacts));
+  }, [contacts]);
   const updateContacts = () => {
-    setContacts((prevContacts) => [...prevContacts, { id: 'new-id', name: 'New Contact', number: '123-45-67' }]);
+    setContacts((previousContacts) => [...previousContacts, {}]);
   };
+  const deleteContact = (contactId) => {
+    setContacts((previousContacts) => {
+      return previousContacts.filter((contact) => contact.id !== contactId);
+    });
+  };
+  const displayedContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(inputValue.toLowerCase()));
 
   return (
     <div className="wrap">
       <Title />
-      <ContactForm addContact={handleAddingContact} />
-      <SearchBox handleChange={handleChange} />
-      <ContactList contacts={contacts} updateContacts={updateContacts} />
+      <ContactForm addContact={addContact} />
+      <SearchBox value={inputValue} onSearchBoxChange={setInputValue} />
+      <ContactList contacts={displayedContacts} updateContacts={updateContacts} onDelete={deleteContact} />
     </div>
   );
 }

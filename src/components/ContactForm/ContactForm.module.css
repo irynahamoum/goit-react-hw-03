@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   border: 1px solid #4264fb;
   border-radius: 6px;
   padding: 30px;
@@ -23,6 +22,9 @@
   border-radius: 6px;
   height: 30px;
   color: #4264fb;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  box-sizing: border-box;
 }
 
 .input:hover,
@@ -34,6 +36,18 @@
 }
 
 .label {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   align-self: start;
   color: #1c45fc;
+  font-size: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.errorMessage {
+  color: #ff2e2e;
+  align-self: start;
+  margin-block-start: 0em;
+  padding-bottom: 10px;
 }
