@@ -20,9 +20,6 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem('saved-contacts', JSON.stringify(contacts));
   }, [contacts]);
-  // const updateContacts = () => {
-  //   setContacts((previousContacts) => [...previousContacts, {}]);
-  // };
   const deleteContact = (contactId) => {
     setContacts((previousContacts) => {
       return previousContacts.filter((contact) => contact.id !== contactId);
