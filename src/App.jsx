@@ -20,9 +20,9 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem('saved-contacts', JSON.stringify(contacts));
   }, [contacts]);
-  const updateContacts = () => {
-    setContacts((previousContacts) => [...previousContacts, {}]);
-  };
+  // const updateContacts = () => {
+  //   setContacts((previousContacts) => [...previousContacts, {}]);
+  // };
   const deleteContact = (contactId) => {
     setContacts((previousContacts) => {
       return previousContacts.filter((contact) => contact.id !== contactId);
@@ -35,7 +35,7 @@ function App() {
       <Title />
       <ContactForm addContact={addContact} />
       <SearchBox value={inputValue} onSearchBoxChange={setInputValue} />
-      <ContactList contacts={displayedContacts} updateContacts={updateContacts} onDelete={deleteContact} />
+      <ContactList contacts={displayedContacts} onDelete={deleteContact} />
     </div>
   );
 }
